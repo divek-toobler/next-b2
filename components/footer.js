@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-      <div>
-          2021
+      <div className="text-center pb-4">
+          © Copyright 2021 Team UX Dots
       </div>
       );
     }
