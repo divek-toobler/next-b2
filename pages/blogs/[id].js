@@ -2,7 +2,7 @@ import { Container } from 'react-bootstrap';
 
 
 export const getStaticPaths = async () => {
-    const res = await fetch('https://jsonplaceholder.typicode.com/users');
+    const res = await fetch('https://jsonplaceholder.typicode.com/users/');
     const data = await res.json();
   
     // map data to an array of path objects with params (id)
@@ -29,14 +29,13 @@ export const getStaticPaths = async () => {
   }
 
 const BlogDetails = ({ covi }) => {
-
-    // console.log(covi)
     
     
     return (
         <div>
              <Container>
-                <h2>State : { covi.name }</h2>
+                <h2>{ covi.name }</h2>
+                <p>{ covi.email } </p>
             </Container>
         </div>
     );
