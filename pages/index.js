@@ -14,6 +14,8 @@ export const getStaticProps = async () => {
 }
 
 
+
+
 export default function Home({covidToday}) {
 
   // console.log(covidToday.KL)
@@ -21,8 +23,43 @@ export default function Home({covidToday}) {
   return (
     <div>
        <Container>
-       <p>Last Updated : {covidToday.KL.meta.tested.last_updated}</p>
-          <Row>
+        <p className="mb-1 mt-5">{covidToday.KL.meta.tested.last_updated}</p>
+        <h2 className="mb-5">കോവിഡ് 19 കേരളത്തിൽ  ഇന്ന് </h2>
+       <Row>
+         <Col sm={3}>
+            <Card className="mb-4">
+              <Card.Body>
+                <p className="mb-1">രോഗമുക്തി നേടിയവർ </p>
+                <h3 className="mb-0">{covidToday.KL.delta.recovered}</h3>
+              </Card.Body>
+            </Card>
+         </Col>
+         <Col sm={3}>
+         <Card className="mb-4">
+              <Card.Body>
+                <p className="mb-1">സാമ്പിൾ പരിശോധിച്ചത്</p>
+                <h3 className="mb-0">{covidToday.KL.delta.tested}</h3>
+            </Card.Body>
+            </Card>
+         </Col>
+         <Col sm={3}>
+         <Card className="mb-4">
+              <Card.Body>
+                <p className="mb-1">സ്ഥിരീകരിച്ച മരണം </p>
+                <h3 className="mb-0">{covidToday.KL.delta.deceased}</h3>
+            </Card.Body>
+            </Card>
+         </Col>
+         <Col sm={3}>
+         <Card className="mb-4">
+              <Card.Body>
+                <p className="mb-1">വാക്‌സിൻ സ്വീകരിച്ചവർ</p>
+                <h3 className="mb-0">{covidToday.KL.delta.vaccinated}</h3>
+            </Card.Body>
+            </Card>
+         </Col>
+       </Row>
+          {/* <Row>
               <Col sm={12} className="mb-4">
                   <Card>
                     <Card.Body>
@@ -177,7 +214,7 @@ export default function Home({covidToday}) {
                   </Card>
               </Col>
               
-          </Row>
+          </Row> */}
           
        </Container>
     </div>

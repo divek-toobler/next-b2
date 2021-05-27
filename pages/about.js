@@ -16,17 +16,32 @@ export const getStaticProps = async () => {
 
 export default function About({covidAll}) {
 
-  console.log(covidAll)
+  // console.log(covidAll)
 
   return (
     <div>
         <Container>
         <Row>
           {covidAll.map(covidAll => (
-            <Col sm={3} >
+            <Col sm={12} >
                 <Card className="mb-4">
                   <Card.Body>
-                    <Card.Title>{covidAll.country}</Card.Title> 
+                    <h2>{covidAll.country}</h2> 
+                    <Row>
+                        <Col>
+                          <p className="mb-1">ആകെ സ്ഥിരീകരിച്ച മരണം</p>
+                          <h4 className="mb-0">{covidAll.deaths}</h4>
+                        </Col>
+                        <Col>
+                          <p className="mb-1">ഇന്ന് രോഗമുക്തി നേടിയവർ</p>
+                          <h4 className="mb-0">{covidAll.recovered}</h4>
+                        </Col>
+                        <Col>
+                          <p className="mb-1">ആകെ രോഗികകൾ </p>
+                          <h4 className="mb-0">{covidAll.cases}</h4>
+                        </Col>
+                    </Row>
+                    
                   </Card.Body>
                 </Card>
             </Col>

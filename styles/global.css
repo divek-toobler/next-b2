@@ -10,4 +10,5 @@ body, *{
 }
 .mainWrap{
     padding: 25px 0;
+    min-height: calc(100vh - 148px);
 }
