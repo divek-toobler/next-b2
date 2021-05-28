@@ -1,11 +1,18 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container, Modal, Button, Form, Row, Col } from 'react-bootstrap';
 import Style from '../styles/Header.module.css'
 
 const Header = () => {
+
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const router = useRouter();
 
@@ -23,10 +30,47 @@ const Header = () => {
             <Link href="/projects"><a className={router.pathname == "/projects" ? "p-2 pe-auto active" : "p-2 pe-auto"}>Projects</a></Link> */}
             <Link href="/blogs/"><a className={router.pathname == "/blogs" ? "p-2 pe-auto active" : "p-2 pe-auto"}>Blog</a></Link>
             <Link href="/contact"><a className={router.pathname == "/contact" ? "p-2 pe-auto active" : "p-2 pe-auto"}>Contact</a></Link>
+            <Button variant="link" onClick={handleShow}>Login</Button>
           </Nav>
         </Navbar.Collapse>
         </Container>
       </Navbar>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header>
+          <Modal.Title>Login</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <Form>
+          <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+            <Form.Label column sm="2">
+              Email
+            </Form.Label>
+            <Col sm="10">
+              <Form.Control type="username" defaultValue="email@example.com" />
+            </Col>
+          </Form.Group>
+
+          <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+            <Form.Label column sm="2">
+              Password
+            </Form.Label>
+            <Col sm="10">
+              <Form.Control type="password" placeholder="Password" />
+            </Col>
+          </Form.Group>
+        </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button  variant="link" onClick={handleClose}>
+            Cancel
+          </Button>
+          <Button variant="primary">
+            Login
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
     </div>
   );
 }
