@@ -24,7 +24,7 @@ const Header = () => {
     <div>
       <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className={Style.header}>
         <Container>
-        <Navbar.Brand href="/"><Image src="/COVID19.svg" width={150} height={60}></Image></Navbar.Brand>
+        <Navbar.Brand href="/"><Image src="/covid-logo.svg" width={150} height={60}></Image></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
