@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import { Navbar, Nav, Container, Modal, Button, Form, Row, Col } from 'react-bootstrap';
 import Style from '../styles/Header.module.css'
+import AuthContext from '../stores/authContext';
 
 const Header = () => {
 
@@ -15,6 +16,9 @@ const Header = () => {
   const handleShow = () => setShow(true);
 
   const router = useRouter();
+
+  const {user, login} = useContext(AuthContext) 
+  console.log(user)
 
   return (
     <div>
@@ -30,7 +34,7 @@ const Header = () => {
             <Link href="/projects"><a className={router.pathname == "/projects" ? "p-2 pe-auto active" : "p-2 pe-auto"}>Projects</a></Link> */}
             <Link href="/blogs/"><a className={router.pathname == "/blogs" ? "p-2 pe-auto active" : "p-2 pe-auto"}>Blog</a></Link>
             <Link href="/contact"><a className={router.pathname == "/contact" ? "p-2 pe-auto active" : "p-2 pe-auto"}>Contact</a></Link>
-            <Button variant="link" onClick={handleShow}>Login</Button>
+            <Button type="primary" className="ms-5" onClick={login}>Login</Button>
           </Nav>
         </Navbar.Collapse>
         </Container>
