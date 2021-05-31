@@ -4,7 +4,7 @@ import { ArrowUpCircle, CheckCircle, XCircle, ArrowDownLeftCircle } from 'react-
 
 export const getStaticProps = async () => {
 
-  const res = await fetch('https://api.covid19india.org/v4/min/data.min.json')
+  const res = await fetch('https://api.covid19india.org/v4/min/data.min.json') 
   const data = await res.json();
 
   return {
@@ -54,7 +54,7 @@ export default function Home({covidToday}) {
          <Card className="mb-4">
               <Card.Body>
                 <p className="mb-1">വാക്‌സിൻ സ്വീകരിച്ചവർ</p>
-                <h3 className="mb-0">{covidToday.KL.delta.vaccinated}</h3>
+                <h3 className="mb-0">{covidToday.KL.delta7.vaccinated}</h3>
             </Card.Body>
             </Card>
          </Col>
