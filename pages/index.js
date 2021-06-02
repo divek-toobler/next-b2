@@ -30,7 +30,7 @@ export default function Home({covidToday}) {
             <Card className="mb-4">
               <Card.Body>
                 <p className="mb-1">രോഗമുക്തി നേടിയവർ </p>
-                <h3 className="mb-0">{covidToday.KL.delta.recovered}</h3>
+                <h3 className="mb-0">{covidToday.KL.delta7.recovered}</h3>
               </Card.Body>
             </Card>
          </Col>
@@ -38,7 +38,7 @@ export default function Home({covidToday}) {
          <Card className="mb-4">
               <Card.Body>
                 <p className="mb-1">സാമ്പിൾ പരിശോധിച്ചത്</p>
-                <h3 className="mb-0">{covidToday.KL.delta.tested}</h3>
+                <h3 className="mb-0">{covidToday.KL.delta7.tested}</h3>
             </Card.Body>
             </Card>
          </Col>
@@ -46,7 +46,7 @@ export default function Home({covidToday}) {
          <Card className="mb-4">
               <Card.Body>
                 <p className="mb-1">സ്ഥിരീകരിച്ച മരണം </p>
-                <h3 className="mb-0">{covidToday.KL.delta.deceased}</h3>
+                <h3 className="mb-0">{covidToday.KL.delta7.deceased}</h3>
             </Card.Body>
             </Card>
          </Col>
