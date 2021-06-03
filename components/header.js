@@ -8,7 +8,7 @@ import Style from '../styles/Header.module.css'
 import AuthContext from '../stores/authContext';
 
 const Header = () => {
-
+ 
 
   const [show, setShow] = useState(false);
 
@@ -17,7 +17,7 @@ const Header = () => {
 
   const router = useRouter();
 
-  const {user, login, logout} = useContext(AuthContext) 
+  const {user, login, logout, authReady} = useContext(AuthContext) 
   console.log(user)
 
   return (
@@ -40,8 +40,15 @@ const Header = () => {
             <Link href="/projects"><a className={router.pathname == "/projects" ? "p-2 pe-auto active" : "p-2 pe-auto"}>Projects</a></Link> */}
             <Link href="/blogs/"><a className={router.pathname == "/blogs" ? "p-2 pe-auto active" : "p-2 pe-auto"}>Blog</a></Link>
             <Link href="/contact"><a className={router.pathname == "/contact" ? "p-2 pe-auto active" : "p-2 pe-auto"}>Contact</a></Link>
-            <Button type="primary" className="ms-5" onClick={login}>Login</Button>
-            <Button type="primary" className="ms-2" onClick={logout}>Logout</Button>
+            {authReady && (
+                  <>
+                    {user &&  <a className="p-2 pe-auto">{user.user_metadata.full_name}</a>}
+                    {!user && <Button type="primary" className="ms-5" onClick={login}>Login</Button>}
+                    {user && <Button type="primary" className="ms-2" onClick={logout}>Logout</Button>}
+                  </>
+              )
+            }
+            
           </Nav>
         </Navbar.Collapse>
         </Container>
