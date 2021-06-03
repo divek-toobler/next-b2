@@ -23,14 +23,14 @@ export default function Home({covidToday}) {
   return (
     <div>
        <Container>
-        {/* <p className="mb-1 mt-5">{covidToday.KL.meta.tested.last_updated}</p> */}
+        <p className="mb-1 mt-5">{covidToday.KL.meta.tested.last_updated}</p>
         <h2 className="mb-5">കോവിഡ് 19 കേരളത്തിൽ  ഇന്ന് </h2>
        <Row>
          <Col sm={3}>
             <Card className="mb-4">
               <Card.Body>
                 <p className="mb-1">രോഗമുക്തി നേടിയവർ </p>
-                {/* <h3 className="mb-0">{covidToday.KL.delta7.recovered}</h3> */}
+                <h3 className="mb-0">{covidToday.KL.delta7.recovered}</h3>
               </Card.Body>
             </Card>
          </Col>
@@ -38,7 +38,7 @@ export default function Home({covidToday}) {
          <Card className="mb-4">
               <Card.Body>
                 <p className="mb-1">സാമ്പിൾ പരിശോധിച്ചത്</p>
-                {/* <h3 className="mb-0">{covidToday.KL.delta7.tested}</h3> */}
+                <h3 className="mb-0">{covidToday.KL.delta7.tested}</h3>
             </Card.Body>
             </Card>
          </Col>
@@ -46,7 +46,7 @@ export default function Home({covidToday}) {
          <Card className="mb-4">
               <Card.Body>
                 <p className="mb-1">സ്ഥിരീകരിച്ച മരണം </p>
-                {/* <h3 className="mb-0">{covidToday.KL.delta7.deceased}</h3> */}
+                <h3 className="mb-0">{covidToday.KL.delta7.deceased}</h3>
             </Card.Body>
             </Card>
          </Col>
@@ -54,7 +54,7 @@ export default function Home({covidToday}) {
          <Card className="mb-4">
               <Card.Body>
                 <p className="mb-1">വാക്‌സിൻ സ്വീകരിച്ചവർ</p>
-                {/* <h3 className="mb-0">{covidToday.KL.delta7.vaccinated}</h3> */}
+                <h3 className="mb-0">{covidToday.KL.delta7.vaccinated}</h3>
             </Card.Body>
             </Card>
          </Col>
