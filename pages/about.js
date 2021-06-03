@@ -23,7 +23,7 @@ export default function About({covidAll}) {
         <Container>
         <Row>
           {covidAll.map(covidAll => (
-            <Col sm={12} >
+            <Col sm={12} key={covidAll}>
                 <Card className="mb-4">
                   <Card.Body>
                     <h2>{covidAll.country}</h2> 
