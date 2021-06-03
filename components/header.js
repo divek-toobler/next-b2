@@ -8,7 +8,7 @@ import Style from '../styles/Header.module.css'
 import AuthContext from '../stores/authContext';
 
 const Header = () => {
- 
+  
 
   const [show, setShow] = useState(false);
 
